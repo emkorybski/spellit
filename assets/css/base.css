@@ -1,0 +1,86 @@
+body{
+    width: 320px;
+    height: 520px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+body > * {
+    margin: 0 auto;
+    position: static;
+    font-family: Arial, sans-serif;
+}
+
+#gameOver {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    margin-top: 0;
+    background: #333;
+    text-align: center;
+    line-height: 90px;
+    z-index: 1000;
+}
+
+#gameOver > a.button.slideout {
+    left: 10px;
+    top: 45%;
+}
+
+#timer.button {
+    left: 10px;
+}
+
+#counterSec {
+    right: 10px;
+    float: right;
+    width: auto;
+    font-size: smaller;
+    background: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#sidebar {
+    width: 40px;
+    text-align: center;
+    height: 100%;
+    border-right: 1px solid #000;
+}
+
+#dock1, #dock2, #dock3 {
+    background: #ececec;
+    border: 1px solid #000;
+    height: 28px;
+    margin-top: 3px;
+    margin-left: 5px;
+    width: 28px;
+    text-align: center;
+    line-height: 25px;
+}
+
+#submitWord.button {
+    position: static;
+    padding:8px;
+    margin-top: 4px;
+}
+/*
+    THEME OVERRIDES
+*/
+#jqt ul li.arrow:after, #jqt ul li.forward:after, .base-chevron {
+    content: '\203A'; /* RIGHT CHEVRON */ /* LEFT --> \2039 */
+    font-family: Arial;
+}
+
+#jqt h1, #jqt h2 {
+    font-family: Arial, sans-serif;
+}
+
+#jqt ul, #jqt ul.individual li {
+    font: bold 16px Arial;
+}

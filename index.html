@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="cache-control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>  Spell It ! </title>
+
+	<link rel="stylesheet" href="themes/css/jqtouch.css" data-jqt-theme />
+
+	<link type="text/css" rel="stylesheet" href="assets/css/base.css"/>
+
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.js"></script>
+    <script src="src/jqt.js"></script>
+    <script src="src/jqtouch-jquery2.js"></script>
+    <script src="assets/js/onInit.js"></script>
+    <!--<script src="assets/js/gameEngine.js"></script>-->
+    <script src="counter.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        var jQT = new $.jQTouch();
+    </script>
+</head>
+	
+	<body>
+	  <!-- begin first page -->
+    <div id="page1">
+        <div class='toolbar'>
+            <a class="button">Home</a>
+        </div>
+              <h2>Choose level</h2>
+              <ul class="rounded" id="choose_level">
+                  <li class="arrow"><a href="#page2">Beginner (3 letters)</a></li>
+                  <li class="arrow"><a href="" >Intermediate (4 letters)</a></li>
+                  <li class="arrow"><a href="" >Advanced (6 letters)</a></li>
+              </ul>
+    </div>
+    <!-- end first page -->
+
+    <!-- Begin second page -->
+    <div id="page2">
+        <div class='toolbar'>
+            <a href="#page1" class="button slideout">Back</a>
+        </div>
+			<h2>Modes <br/><small>(check box to START the game)</small></h2>
+            <form>
+                <ul class="rounded">
+                  <li><input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+                      <label for="checkbox-1">Letters are ordered (semi-demo mode)</label></li>
+                  <li><input type="checkbox" disabled="disabled" name="checkbox-2" id="checkbox-2" class="custom" />
+                      <label for="checkbox-2">Letters are random (playing mode)</label></li>
+                </ul>
+            </form>
+            <p id="thank_you"></p>
+    </div>
+    <!-- end second page -->
+		<!--start of page 3 -->
+     <div id="page3">
+         <div class='toolbar'>
+             <a id="timer" class="button">Go!</a>
+             <h1>Game on!</h1>
+             <div id="counterSec">39</div>
+         </div>
+         <ul class="edgetoedge">
+              <li class="sep">LEVEL: <span>Beginner</span></li>
+              <li class="sep">SCORE:
+                  <span id="wordCount">0</span>
+              </li>
+          </ul>
+
+         <div id="drag1"></div>
+         <div id="drag2"></div>
+         <div id="drag3"></div>
+
+         <div id="sidebar">
+             <div id="dock1">
+             </div>
+             <div id="dock2">
+             </div>
+             <div id="dock3">
+             </div>
+             <a id="submitWord" class="button">OK</a>
+         </div>
+      </div>
+		<input type="hidden" name="hiddenInput" id="hiddenInput" value="0">
+	</body>
+
+</html>
