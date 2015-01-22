@@ -59,6 +59,8 @@ $(document).ready(function(){
             var dock3 = $("#dock3").val();
 
             if (dock1 == "" && dock2 == "" && dock3 == "") {
+                /*
+                // semi-demo code below, just clicking
                 $("#drag1").fadeIn().css({
                     position: 'absolute',
                     zIndex: 500,
@@ -95,6 +97,107 @@ $(document).ready(function(){
                         });
                     });
                 });
+                */
+
+                // Drag-n-Drop code
+                $(".dropzone").each(function(){
+
+                   // var curEl = $(this);
+                    this.addEventListener("dragstart",function(evt){
+                       // this.style.opacity = '0.4';
+                        evt.dataTransfer.setData('text/html', this.innerHTML);
+                    },false);
+
+                    function handleDragStart(e) {
+                        this.style.opacity = '0.4';  // this / e.target is the source node.
+                    }
+
+                    function handleDragOver(e) {
+                        if (e.preventDefault) {
+                            e.preventDefault(); // Necessary. Allows us to drop.
+                        }
+
+                        e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+
+                        return false;
+                    }
+
+                    function handleDragEnter(e) {
+                        // this / e.target is the current hover target.
+                        this.classList.add('over');
+                    }
+
+                    function handleDragLeave(e) {
+                        this.classList.remove('over');  // this / e.target is previous target element.
+                    }
+
+                    var cols = document.querySelectorAll('#columns .column');
+                    [].forEach.call(cols, function(col) {
+                        col.addEventListener('dragstart', handleDragStart, false);
+                        col.addEventListener('dragenter', handleDragEnter, false);
+                        col.addEventListener('dragover', handleDragOver, false);
+                        col.addEventListener('dragleave', handleDragLeave, false);
+                    });
+
+                    $(this).fadeIn().css({
+                        position: 'absolute',
+                        zIndex: 500,
+                        left: rndLeftOne,
+                        top: rndTopOne,
+                        padding: 5,
+                        background: "#ececec",
+                        border: "1px solid #333"
+                    }).html( letter1 );
+                    if (dock1 == "" && dock2 == "" && dock3 == "") {
+                        this.break;
+                    } else {
+                        this.continue;
+                    }
+
+                });
+
+
+
+                    // .on("click", function(){
+                    //$("#dock1").html( letter1 );
+                    //$(this).empty().hide();
+
+/*
+                        $("#drag2").fadeIn().css({
+                            position: 'absolute',
+                            zIndex: 500,
+                            left: rndLeftTwo,
+                            top: rndTopTwo,
+                            padding: 5,
+                            background: "#ececec",
+                            border: "1px solid #333"
+                        }).html( letter2 );
+
+                        //.on("click",function(){
+                        //$("#dock2").html( letter2 );
+                        //$(this).empty().hide();
+*/
+/*
+
+                        $("#drag3").fadeIn().css({
+                            position: 'absolute',
+                            zIndex: 500,
+                            left: rndLeftThree,
+                            top: rndTopThree,
+                            padding: 5,
+                            background: "#ececec",
+                            border: "1px solid #333"
+                        }).html( letter3 );
+
+
+                          //  .on("click", function(){
+                          //  $("#dock3").html( letter3 );
+                          //  $(this).empty().hide();
+*/
+                  //      });
+                //    });
+              //  });
+
             }
         };
 

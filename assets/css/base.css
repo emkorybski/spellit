@@ -33,6 +33,7 @@ body > * {
 
 #timer.button {
     left: 10px;
+    right: auto;
 }
 
 #counterSec {
@@ -62,13 +63,11 @@ body > * {
     margin-left: 5px;
     width: 28px;
     text-align: center;
-    line-height: 25px;
+    line-height: 30px;
 }
 
 #submitWord.button {
     position: static;
-    padding:8px;
-    margin-top: 4px;
 }
 
 #submitWord.button.greenB:active, #submitWord.button.greenB:focus {
