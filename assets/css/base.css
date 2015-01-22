@@ -58,6 +58,7 @@ body > * {
     border: 1px solid #000;
     height: 28px;
     margin-top: 3px;
+    margin-bottom: 5px;
     margin-left: 5px;
     width: 28px;
     text-align: center;
@@ -68,6 +69,15 @@ body > * {
     position: static;
     padding:8px;
     margin-top: 4px;
+}
+
+#submitWord.button.greenB:active, #submitWord.button.greenB:focus {
+    background-color: #53b401;
+    background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#76fe04),color-stop(50%,#5fcd01),color-stop(51%,#53b401),color-stop(100%,#479b01));
+    background-image: -webkit-linear-gradient(top,#76fe04,#5fcd01 50%,#53b401 51%,#479b01);
+    background-image: linear-gradient(top,#76fe04,#5fcd01 50%,#53b401 51%,#479b01);
+    color: #fff;
+    text-shadow: #3c8101 0 -1px 0;
 }
 /*
     THEME OVERRIDES

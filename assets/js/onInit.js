@@ -16,18 +16,21 @@ $(document).ready(function(){
         $("#page2 .toolbar").append('<a href="#page3" class="start button slideout">Start the game</a>');
     });
 
+    $("#submitWord").on("click", function(){
+        var initWordCount = $("#wordCount").text();
+        $("#wordCount").text(parseInt(initWordCount) + 1);
+        $("#dock1").empty();
+        $("#dock2").empty();
+        $("#dock3").empty();
+        $(this).addClass("greenB");
 
-    // change was needed according to http://stackoverflow.com/questions/13418963/jquery-onchange-function-not-triggering-for-dynamically-created-inputs
-
+        playLevelBeginner();
+    });
 
     $("#timer").on("click", function() {
         $(this).addClass('start').fadeOut();
         countSeconds();
         playLevelBeginner();
-        $("#hiddenInput").on("change", "input", function(){
-            console.log("change detected!");
-            playLevelBeginner();
-        });
     });
 
         // TODO cache jQuery selectors using variables better in below code
@@ -54,8 +57,6 @@ $(document).ready(function(){
             var dock1 = $("#dock1").val();
             var dock2 = $("#dock2").val();
             var dock3 = $("#dock3").val();
-
-            var initWordCount = $("#wordCount").text();
 
             if (dock1 == "" && dock2 == "" && dock3 == "") {
                 $("#drag1").fadeIn().css({
@@ -91,12 +92,6 @@ $(document).ready(function(){
                         }).html( letter3 ).on("click", function(){
                             $("#dock3").html( letter3 );
                             $(this).empty().hide();
-
-                            $("#wordCount").text(parseInt(initWordCount) + 1);
-                            $("#dock1").empty();
-                            $("#dock2").empty();
-                            $("#dock3").empty();
-                            $("#hiddenInput").val(parseInt(initWordCount) + 1);
                         });
                     });
                 });
